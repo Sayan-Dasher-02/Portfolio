@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sayan Mondal | Portfolio</title>
+  <meta name="description" content="Professional career portfolio showcasing education, projects, certificates, skills, and contact details.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    (function () {
+      var savedTheme = null;
+      try {
+        savedTheme = localStorage.getItem("portfolio-theme");
+      } catch (error) {
+        savedTheme = null;
+      }
+      var systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = savedTheme || systemTheme;
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="background-canvas" aria-hidden="true"></canvas>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+  <div class="page-loader" id="page-loader" role="status" aria-live="polite" aria-label="Loading portfolio">
+    <div class="loader-card">
+      <div class="loader-orbit" aria-hidden="true">
+        <span></span>
+      </div>
+      <div class="loader-avatar">
+        <img src="assets/Sayan Formal.jpeg" alt="">
+      </div>
+      <div>
+        <p class="loader-name">Sayan Mondal</p>
+        <p class="loader-text"><span id="loader-text">Loading portfolio</span><span class="loader-dots" aria-hidden="true"><i></i><i></i><i></i></span></p>
+      </div>
+      <div class="loader-bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Go to home">
+      <span class="brand-mark brand-photo" aria-hidden="true">
+        <img src="assets/Sayan Mondal 2.jpg" alt="">
+      </span>
+      <span>Sayan Mondal</span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle theme">
+        <span class="theme-toggle-track" aria-hidden="true">
+          <span class="theme-icon sun-icon"></span>
+          <span class="theme-icon moon-icon"></span>
+          <span class="theme-thumb"></span>
+        </span>
+      </button>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-band">
+      <div class="hero-content">
+        <div class="section-label hero-label">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M10 6V5a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v1"></path>
+              <path d="M4 8h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8Z"></path>
+              <path d="M4 13h16"></path>
+            </svg>
+          </span>
+          <p class="eyebrow">Career Portfolio</p>
+        </div>
+        <h1>Sayan Mondal</h1>
+        <p class="hero-role">
+          <span class="role-prefix">I am a</span>
+          <span
+            class="typed-text"
+            data-typed-items="Web Developer,Software Engineer,Full Stack Developer,Problem Solver,Creative Coder"
+            aria-live="polite"
+          >Web Developer</span>
+          <span class="typing-cursor" aria-hidden="true"></span>
+        </p>
+        <p class="hero-copy">
+          I build reliable, user-focused digital experiences with clean interfaces,
+          thoughtful details, and practical engineering.
+        </p>
+        <div class="moving-words" aria-label="Professional strengths">
+          <span>Focused on</span>
+          <strong>
+            <span>clean code</span>
+            <span>responsive design</span>
+            <span>real-world problem solving</span>
+            <span>user-friendly interfaces</span>
+          </strong>
+        </div>
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="button primary" href="assets/Sayan%20Mondal%20KIIT%20Resume%20with%20Picture.pdf" download="Sayan-Mondal-Resume.pdf">Download Resume</a>
+          <a class="button secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Portfolio highlights">
+        <div class="profile-orbit">
+          <div class="profile-initials profile-photo">
+            <img src="assets/Sayan Formal.jpeg" alt="Sayan Mondal">
+          </div>
+          <span class="orbit-dot dot-a"></span>
+          <span class="orbit-dot dot-b"></span>
+          <span class="orbit-dot dot-c"></span>
+        </div>
+        <div class="metric-strip">
+          <span><strong class="metric-number" data-count="8" data-suffix="+">0</strong> Projects</span>
+          <span><strong class="metric-number" data-count="5" data-suffix="+">0</strong> Skills</span>
+          <span><strong class="metric-number" data-count="3" data-suffix="+">0</strong> Certificates</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-band about-section">
+      <div class="section-heading">
+        <div class="section-label">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4"></circle>
+              <path d="M4 21a8 8 0 0 1 16 0"></path>
+            </svg>
+          </span>
+          <p class="eyebrow">About Me</p>
+        </div>
+        <h2>Focused on building useful, polished digital work.</h2>
+      </div>
+      <div class="about-layout">
+        <aside class="about-profile-card">
+          <div class="about-portrait">
+            <img src="assets/Sayan%20Mondal.jpg" alt="Portrait of Sayan Mondal" loading="lazy">
+          </div>
+          <div class="about-profile-meta">
+            <span class="profile-status">Open to opportunities</span>
+            <h3>Sayan Mondal</h3>
+            <p>MCA Student and Web Developer</p>
+          </div>
+        </aside>
+
+        <div class="about-content">
+          <div class="about-copy">
+            <p class="about-lead">
+              I am an aspiring technology professional with a strong interest in
+              web development, software engineering, and creating products that
+              solve real problems.
+            </p>
+            <p>
+              I enjoy learning modern tools, improving my craft, and turning ideas
+              into clean, responsive websites and practical applications with a
+              focus on usability, performance, and maintainable code.
+            </p>
+            <div class="about-points">
+              <span><strong>Builds</strong> Responsive web interfaces</span>
+              <span><strong>Works With</strong> HTML, CSS, JavaScript, React</span>
+              <span><strong>Values</strong> Clean UI and reliable logic</span>
+            </div>
+          </div>
+
+          <div class="quick-info">
+            <div>
+              <span>Current Focus</span>
+              <strong>Web Development and Software Engineering</strong>
+            </div>
+            <div>
+              <span>Career Goal</span>
+              <strong>Building reliable, user-focused applications</strong>
+            </div>
+            <div>
+              <span>Available For</span>
+              <strong>Internships, Projects, Full-Time Roles</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section-band">
+      <div class="section-heading compact">
+        <div class="section-label">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="m8 9-4 3 4 3"></path>
+              <path d="m16 9 4 3-4 3"></path>
+              <path d="m14 5-4 14"></path>
+            </svg>
+          </span>
+          <p class="eyebrow">Skills</p>
+        </div>
+        <h2>Tools and technologies I work with.</h2>
+      </div>
+      <div class="skill-grid">
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">FE</span>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-list">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>React</span>
+            <span>Tailwind CSS</span>
+            <span>Bootstrap</span>
+          </div>
+          <div class="skill-meter" data-level="90" aria-label="Frontend proficiency 90 percent">
+            <span></span>
+          </div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">BE</span>
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-list">
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>REST APIs</span>
+            <span>Springboot</span>
+          </div>
+          <div class="skill-meter" data-level="76" aria-label="Backend proficiency 56 percent">
+            <span></span>
+          </div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">PL</span>
+            <h3>Programming Languages</h3>
+          </div>
+          <div class="skill-list">
+            <span>Python</span>
+            <span>Java</span>
+            <span>C</span>
+          </div>
+          <div class="skill-meter" data-level="82" aria-label="Programming languages proficiency 78 percent">
+            <span></span>
+          </div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">DB</span>
+            <h3>Databases</h3>
+          </div>
+          <div class="skill-list">
+            <span>MySQL</span>
+            <span>MongoDB</span>
+            <span>Oracle SQL</span>
+          </div>
+          <div class="skill-meter" data-level="78" aria-label="Databases proficiency 82 percent">
+            <span></span>
+          </div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">TP</span>
+            <h3>Tools & Platforms</h3>
+          </div>
+          <div class="skill-list">
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>VS Code</span>
+            <span>Vercel</span>
+            <span>Netlify</span>
+            <span>Render</span>
+            <span>AWS</span>
+          </div>
+          <div class="skill-meter" data-level="84" aria-label="Tools and platforms proficiency 84 percent">
+            <span></span>
+          </div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-icon">DB</span>
+            <h3>Others</h3>
+          </div>
+          <div class="skill-list">
+            <span>AI-ML</span>
+            <span>PySpark</span>
+            <span>Flask</span>
+            <span>Selenium</span>
+            <span>Docker</span>
+            <span>Jenkins</span>
+            <span>Sonarqube</span>
+          </div>
+          <div class="skill-meter" data-level="78" aria-label="Others proficiency 60 percent">
+            <span></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="education" class="section-band muted-band">
+      <div class="section-heading">
+        <div class="section-label">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 8 12 3l9 5-9 5-9-5Z"></path>
+              <path d="M7 11v5c0 1.7 2.2 3 5 3s5-1.3 5-3v-5"></path>
+              <path d="M21 8v7"></path>
+            </svg>
+          </span>
+          <p class="eyebrow">Education</p>
+        </div>
+        <h2>Academic background and learning journey.</h2>
+      </div>
+      <div class="timeline education-timeline">
+        <article class="timeline-item education-card">
+          <div class="education-marker" aria-hidden="true">
+            <span>01</span>
+          </div>
+          <div class="education-content">
+            <div class="education-card-head">
+              <div>
+                <p class="timeline-date">2024 - 2026</p>
+                <h3>Master of Computer Application</h3>
+                <p class="education-school">Kalinga Institute of Industrial Technology</p>
+              </div>
+              <span class="education-status">Currently</span>
+            </div>
+            <p>Advanced learning focused on software systems, database management, cloud computing, machine learning, and research-driven development.</p>
+            <div class="education-tags" aria-label="Education focus areas">
+              <span>Advanced Programming Languages</span>
+              <span>Oracle SQL</span>
+              <span>Cloud Computing</span>
+              <span>Artificial Intelligence</span>
+              <span>Software Engineering</span>              
+              <span>Research</span>
+            </div>
+            <div class="education-highlights">
+              <span><strong>CGPA</strong> 9.26 / 10</span>
+              <span><strong>Focus</strong> Specialized engineering</span>
+              <span><strong>Goal</strong> Advanced technical growth</span>
+            </div>
+          </div>
+        </article>
+        <article class="timeline-item education-card">
+          <div class="education-marker" aria-hidden="true">
+            <span>02</span>
+          </div>
+          <div class="education-content">
+            <div class="education-card-head">
+              <div>
+                <p class="timeline-date">2021 - 2024</p>
+                <h3>Bachelor of Computer Application</h3>
+                <p class="education-school">Techno India College of Technology</p>
+              </div>
+              <span class="education-status completed">Completed</span>
+            </div>
+            <p>Relevant coursework: Data Structures, Programming Languages, Database Management, Software Engineering.</p>
+            <div class="education-tags" aria-label="Education focus areas">
+              <span>Data Structures and Algorithms</span>
+              <span>Programming Languages</span>
+              <span>Databases</span>
+              <span>Software Engineering</span>
+              <span>Cloud Computing</span>
+            </div>
+            <div class="education-highlights">
+              <span><strong>CGPA</strong> 8.69 / 10</span>
+              <span><strong>Focus</strong> Full-stack fundamentals</span>
+              <span><strong>Goal</strong> Production-ready projects</span>
+            </div>
+          </div>
+        </article>
+        <article class="timeline-item education-card">
+          <div class="education-marker" aria-hidden="true">
+            <span>03</span>
+          </div>
+          <div class="education-content">
+            <div class="education-card-head">
+              <div>
+                <p class="timeline-date">2019 - 2021</p>
+                <h3>Higher Secondary Education</h3>
+                <p class="education-school">Madhyamgram High School</p>
+              </div>
+              <span class="education-status completed">Completed</span>
+            </div>
+            <p>Focused on mathematics, computer application, and analytical problem solving.</p>
+            <div class="education-tags" aria-label="Education focus areas">
+              <span>Geography</span>
+              <span>Mathematics</span>
+              <span>Computer Application</span>
+              <span>Economics</span>
+            </div>
+            <div class="education-highlights">
+              <span><strong>Percentage</strong> 86.40%</span>
+              <span><strong>Built</strong> Analytical foundation</span>
+              <span><strong>Practiced</strong> Problem solving</span>
+            </div>
+          </div>
+        </article>
+        <article class="timeline-item education-card">
+          <div class="education-marker" aria-hidden="true">
+            <span>04</span>
+          </div>
+          <div class="education-content">
+            <div class="education-card-head">
+              <div>
+                <p class="timeline-date">2017 - 2019</p>
+                <h3>Secondary Education</h3>
+                <p class="education-school">Madhyamgram Acharya Prafulla Chandra Vidyayatan</p>
+              </div>
+              <span class="education-status completed">Completed</span>
+            </div>
+            <p>Built a strong academic base through science, mathematics, language studies, and computer fundamentals.</p>
+            <div class="education-tags" aria-label="Education focus areas">
+              <span>Science</span>
+              <span>Mathematics</span>
+              <span>Computer</span>
+            </div>
+            <div class="education-highlights">
+              <span><strong>Percentage</strong> 89.14%</span>
+              <span><strong>Built</strong> Core fundamentals</span>
+              <span><strong>Started</strong> Technical curiosity</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section-band">
+      <div class="section-heading">
+        <div class="section-label">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"></path>
+              <path d="M8 14h8"></path>
+            </svg>
+          </span>
+          <p class="eyebrow">Projects</p>
+        </div>
+        <h2>Selected work that shows my technical range.</h2>
+      </div>
+      <div class="card-grid">
+        <article class="project-card">
+          <a class="project-image" href="https://github.com/starzooka/Grocery-Shop" target="_blank" rel="noreferrer" aria-label="Open Personal Portfolio Website repository">
+            <img src="assets/GreenMart.jpeg" alt="Preview image for Personal Portfolio Website" loading="lazy">
+          </a>
+          <div class="project-body">
+            <div class="project-topline">
+              <span class="project-type">E-commerce Platform</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3>Green Mart</h3>
+            <p>An online grocery shopping platform that helps customers browse, compare, and purchase fresh
+                            produce, packaged goods, and household essentials with a simple flow.</p>
+            <div class="tag-list">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>MySQL</span>
+              <span>AWS</span>
+            </div>
+            <div class="project-links">
+              <a class="resource-link primary-link" href="https://github.com/starzooka/Grocery-Shop" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-image" href="https://github.com/Sumitswappy/MinorProject/tree/master" target="_blank" rel="noreferrer" aria-label="Open Student Management System repository">
+            <img src="assets/Unifind.jpg" alt="Preview image for Student Management System" loading="lazy">
+          </a>
+          <div class="project-body">
+            <div class="project-topline">
+              <span class="project-type">Full-stack app</span>
+              <span class="project-year">2024</span>
+            </div>
+            <h3>Unifind</h3>
+            <p>A web application designed to help students find suitable colleges faster by filtering and
+                            simplifying the decision-making process.</p>
+            <div class="tag-list">
+              <span>React JS</span>
+              <span>MDB Bootstrap</span>
+              <span >Java Spring Boot</span>
+              <span>MySQL</span>
+              <span>AWS</span>
+            </div>
+            <div class="project-links">
+              <a class="resource-link primary-link" href="https://github.com/Sumitswappy/MinorProject/tree/master" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-image" href="https://github.com/siddharthadas03/No-Plate-Empty.git" target="_blank" rel="noreferrer" aria-label="Open Task Tracker repository">
+            <img src="assets/NoPlateEmpty.png" alt="Preview image for Task Tracker" loading="lazy">
+          </a>
+          <div class="project-body">
+            <div class="project-topline">
+              <span class="project-type">Social impact</span>
+              <span class="project-year">2026</span>
+            </div>
+            <h3>NoPlateEmpty</h3>
+            <p>A platform that connects donors and NGOs, supporting food donation workflows, request
+                            tracking, and admin-controlled access.</p>
+            <div class="tag-list">
+              <span>React.js</span>
+              <span>Tailwind CSS</span>
+              <span>Express.js</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+              <span>Python</span>
+            </div>
+            <div class="project-links">
+              <a class="resource-link primary-link" href="https://github.com/siddharthadas03/No-Plate-Empty.git" target="_blank" rel="noreferrer">GitHub Repo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certificates" class="section-band muted-band">
+      <div class="section-heading">
+        <div class="section-label">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="5"></circle>
+              <path d="m8.8 12.2-1.3 8 4.5-2.7 4.5 2.7-1.3-8"></path>
+            </svg>
+          </span>
+          <p class="eyebrow">Certificates</p>
+        </div>
+        <h2>Certifications and professional learning.</h2>
+      </div>
+      <div class="certificate-list">
+        <article class="certificate-item">
+          <div class="certificate-logo-panel">
+            <img class="certificate-logo" src="assets/accenture.png" alt="Accenture logo" loading="lazy">
+          </div>
+          <div class="certificate-content">
+            <div class="certificate-head">
+              <div>
+                <h3>Accnture Software Engineeing Job Simulation</h3>
+                <p>Accenture</p>
+              </div>
+              <span class="certificate-year">April 2025</span>
+            </div>
+            <div class="certificate-links">
+              <a class="resource-link icon-link primary-link" href="https://m201.syncusercontent.com/mfs-60:e72bf7c0046305cb8db5cd5d3850a17e=============================/p/Accnture%20Software%20Engineeing%20Job%20Simulation%20Certificate.pdf?allowdd=0&datakey=KBonjvGw3Mt/KntOVlnG/tErn9PIUNowaIWktAc3KlagwT9emSDyKHVpu0VTTRDab53BKLLptljUQzH0aKEFNYfUmZCVg//G4nUPjkUzu8gyJET7E/SfUSB5j2AiZSusi8srDxPnxclnv9WcE+cVglkRKPmxAFvp70ejX/dvgMCPnA3CDwIlobdvSa7BuR+wDHGIyTMzhNeyndtvKxYXclwK0ZkVQpKunBM1q9Byo9Lm5nj/SsAaMzgzXND6EhDgfO6jWSqVo7NHflIiY13HhCx9aocFUmiPAu8SOtCxU5MRp3+Mfl+zbsEQnVO5Z0GCR7TdntKbUqjaOCL+9tj+aQ&engine=ln-3.1.38&errurl=mivK2St9NP4HNYcFJwpFM8AFUIrn6II7Zvr0QR7Qk6XjdU93BtMtrfUYMcuMx5kG2/T2GDu2C9CLBwrLAX5PKSldZ5WdGfG0v0OSRstGUwWaX2sX73tkfFff6lxRMTSm/Wu86k68SswryAs7XMJR+jCeCxxpZZsFFkoMUZX7s20VA8Yynwx7qcWKRkmYZO/8R6U6bHLBpNs0zeEmfBrnIxOlW/vnhdW0cY+suzHIQFBAfcQ/XaU0HDIK8geozptiG3z7jNq7pKjIx5UOZpdv+lblyy3aXL4XXptmq9KJ5QsK2nmhI0rP24waIc0qLKAGz9M/lttqqjgTv0IVjpl8lg==&header1=Q29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9wZGY&header2=Q29udGVudC1EaXNwb3NpdGlvbjogaW5saW5lOyBmaWxlbmFtZT0iQWNjbnR1cmUlMjBTb2Z0d2FyZSUyMEVuZ2luZWVpbmclMjBKb2IlMjBTaW11bGF0aW9uJTIwQ2VydGlmaWNhdGUucGRmIjtmaWxlbmFtZSo9VVRGLTgnJ0FjY250dXJlJTIwU29mdHdhcmUlMjBFbmdpbmVlaW5nJTIwSm9iJTIwU2ltdWxhdGlvbiUyMENlcnRpZmljYXRlLnBkZjs&ipaddress=1738661643&linkcachekey=d8fc6cd00&linkoid=1985550008&mode=101&sharelink_id=36234677870008&timestamp=1756460510931&uagent=0b0a6f6b3e847c5c7e7e68bfb2b9bf2cde2853c7&signature=896d224422330cf8b64eb11c661860a70f86532c&cachekey=60:e72bf7c0046305cb8db5cd5d3850a17e=============================" target="_blank" rel="noreferrer" aria-label="View Accenture certificate" title="View Certificate">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </a>
+              <a class="resource-link icon-link" href="assets/Accnture%20Software%20Engineeing%20Job%20Simulation%20Certificate.pdf" download="accenture-software-engineering-job-simulation-certificate.pdf" aria-label="Download Accenture certificate" title="Download Certificate">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12"></path>
+                  <path d="m7 10 5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="certificate-item">
+          <div class="certificate-logo-panel">
+            <img class="certificate-logo" src="assets/cisco.png" alt="Cisco logo" loading="lazy">
+          </div>
+          <div class="certificate-content">
+            <div class="certificate-head">
+              <div>
+                <h3>CCNA: Enterprise Networking, Security, and
+                        Automation</h3>
+                <p>Cisco</p>
+              </div>
+              <span class="certificate-year">June 2025</span>
+            </div>
+            <div class="certificate-links">
+              <a class="resource-link icon-link primary-link" href="https://www.credly.com/badges/be95bcc8-4855-41fb-afe6-15f432cb51f0/public_url" target="_blank" rel="noreferrer" aria-label="View Cisco certificate" title="View Certificate">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </a>
+              <a class="resource-link icon-link" href="assets/CCNA%20Enterprise%20Networking,%20Security%20Certificate%20by%20CISCO.pdf" download="ccna-enterprise-networking-security-certificate.pdf" aria-label="Download Cisco certificate" title="Download Certificate">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12"></path>
+                  <path d="m7 10 5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+        <article class="certificate-item">
+          <div class="certificate-logo-panel">
+            <img class="certificate-logo" src="assets/sap.jpeg" alt="SAP logo" loading="lazy">
+          </div>
+          <div class="certificate-content">
+            <div class="certificate-head">
+              <div>
+                <h3>Exploring SAP Business Technology Platform -
+                        Record of Achievement</h3>
+                <p>SAP</p>
+              </div>
+              <span class="certificate-year">August 2025</span>
+            </div>
+            <div class="certificate-links">
+              <a class="resource-link icon-link primary-link" href="https://www.credly.com/badges/ea7475e5-c8f8-40ca-8b94-1a218fef31fc/public_url" target="_blank" rel="noreferrer" aria-label="View SAP certificate" title="View Certificate">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </a>
+              <a class="resource-link icon-link" href="assets/SAP%20Certification%20by%20SAP.pdf" download="sap-business-technology-platform-certificate.pdf" aria-label="Download SAP certificate" title="Download Certificate">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12"></path>
+                  <path d="m7 10 5 5 5-5"></path>
+                  <path d="M5 21h14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section-band contact-section">
+      <div class="section-heading">
+        <div class="section-label">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 6h16v12H4V6Z"></path>
+              <path d="m4 8 8 6 8-6"></path>
+            </svg>
+          </span>
+          <p class="eyebrow">Contact</p>
+        </div>
+        <h2>Ready to collaborate on meaningful work.</h2>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-copy">
+          <span class="availability-pill">Available for opportunities</span>
+          <p>
+            I am open to internships, full-time roles, freelance projects, and
+            technical collaborations. Share the role, project scope, or idea and
+            I will respond as soon as possible.
+          </p>
+          <div class="contact-info-grid" aria-label="Contact details">
+            <div class="contact-info-card">
+              <span>Email</span>
+              <a href="mailto:sayanmon2021dal@gmail.com">sayanmon2021dal@gmail.com</a>
+            </div>
+            <div class="contact-info-card">
+              <span>Location</span>
+              <strong>Madhyamgram, Kolkata, India</strong>
+            </div>
+            <div class="contact-info-card">
+              <span>Response</span>
+              <strong>Usually within 24 hours</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-panel">
+          <h3>Start a Conversation</h3>
+          <p>Use the form for project inquiries, hiring discussions, or collaboration ideas.</p>
+          <button class="button primary contact-modal-trigger" type="button">Send Message</button>
+
+          <div class="social-links" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/sayan-mondal-823416226/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/sayan-dasher-02" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.facebook.com/sayan.mondal.930313" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/official_sayan02/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.x.com/SayanMondal2002/" target="_blank" rel="noreferrer">X</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="current-year"></span> Sayan Mondal. All rights reserved.</p>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m6 15 6-6 6 6"></path>
+    </svg>
+  </button>
+
+  <div class="contact-modal" id="contact-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-modal-close></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+      <button class="modal-close" type="button" data-modal-close aria-label="Close contact form">&times;</button>
+      <p class="eyebrow">Contact Form</p>
+      <h2 id="contact-modal-title">Send a message</h2>
+      <form
+        class="modal-form"
+        id="contact-form"
+        action="https://formsubmit.co/sayanmon2021dal@gmail.com"
+        method="POST"
+        data-service-url="https://formsubmit.co/ajax/sayanmon2021dal@gmail.com"
+      >
+        <input type="hidden" name="_subject" value="New portfolio contact message">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input class="hidden-field" type="text" name="_honey" tabindex="-1" autocomplete="off">
+        <label for="sender-email">
+          Email Address
+          <input id="sender-email" name="email" type="email" autocomplete="email" placeholder="sender@example.com" required>
+        </label>
+        <label for="sender-phone">
+          Phone Number
+          <input id="sender-phone" name="Phone Number" type="tel" autocomplete="tel" placeholder="+91 98765 43210" required>
+        </label>
+        <label for="sender-message">
+          Message
+          <textarea id="sender-message" name="Message" rows="5" placeholder="Write your message here..." required></textarea>
+        </label>
+        <p class="form-status" id="form-status" aria-live="polite"></p>
+        <button class="button primary" type="submit">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
