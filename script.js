@@ -19,6 +19,7 @@ const modalCloseControls = document.querySelectorAll("[data-modal-close]");
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 const firstContactField = document.getElementById("sender-email");
+const senderPhoneField = document.getElementById("sender-phone");
 const year = document.getElementById("current-year");
 const systemColorScheme = window.matchMedia("(prefers-color-scheme: dark)");
 let lastFocusedElement = null;
@@ -74,6 +75,7 @@ function openContactModal() {
   contactModal.classList.add("is-open");
   contactModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
+  formStatus.classList.remove("is-error");
   formStatus.textContent = "";
 
   window.setTimeout(() => {
@@ -87,6 +89,7 @@ function closeContactModal() {
   contactModal.classList.remove("is-open");
   contactModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
+  formStatus.classList.remove("is-error");
   formStatus.textContent = "";
 
   if (lastFocusedElement) {
@@ -128,15 +131,67 @@ document.addEventListener("keydown", (event) => {
   trapModalFocus(event);
 });
 
+function normalizePhoneNumber(value) {
+  return String(value || "").replace(/\D/g, "").slice(0, 10);
+}
+
+function isValidEmailAddress(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+}
+
+function showFormError(message, field) {
+  formStatus.classList.add("is-error");
+  formStatus.textContent = message;
+
+  if (field) {
+    field.focus();
+  }
+}
+
+function validateContactDetails(email, phone) {
+  if (!isValidEmailAddress(email)) {
+    showFormError("Please enter a valid email address.", firstContactField);
+    return false;
+  }
+
+  if (!/^\d{10}$/.test(phone)) {
+    showFormError("Please enter a valid 10-digit phone number.", senderPhoneField);
+    return false;
+  }
+
+  return true;
+}
+
+senderPhoneField.addEventListener("input", () => {
+  const cleanedPhone = normalizePhoneNumber(senderPhoneField.value);
+
+  if (senderPhoneField.value !== cleanedPhone) {
+    senderPhoneField.value = cleanedPhone;
+  }
+
+  senderPhoneField.setCustomValidity(cleanedPhone.length === 10 ? "" : "Enter a 10-digit phone number.");
+});
+
+firstContactField.addEventListener("input", () => {
+  firstContactField.setCustomValidity("");
+});
+
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (!contactForm.reportValidity()) return;
+  formStatus.classList.remove("is-error");
+  formStatus.textContent = "";
 
   const formData = new FormData(contactForm);
   const senderEmail = String(formData.get("email") || "").trim();
-  const senderPhone = String(formData.get("Phone Number") || "").trim();
+  const senderPhone = normalizePhoneNumber(formData.get("Phone Number"));
   const senderMessage = String(formData.get("Message") || "").trim();
+
+  senderPhoneField.value = senderPhone;
+
+  if (!validateContactDetails(senderEmail, senderPhone)) return;
+  if (!contactForm.reportValidity()) return;
+
   const payload = {
     _subject: "New portfolio contact message",
     _template: "table",
