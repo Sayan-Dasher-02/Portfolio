@@ -2415,8 +2415,10 @@ body.reveal-ready .reveal.is-visible {
   }
 
   .certificate-links {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.65rem;
   }
 
   .contact-info-grid,
@@ -2458,6 +2460,10 @@ body.reveal-ready .reveal.is-visible {
 
   .education-meta span {
     justify-content: center;
+  }
+
+  .education-meta {
+    grid-template-columns: 1fr;
   }
 
   .certificate-item {
